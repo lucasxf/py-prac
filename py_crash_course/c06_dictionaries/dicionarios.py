@@ -72,7 +72,7 @@ print(f"O arista favorito do Lucas é : {artist}")
 
 # using get() to Access Values
 # the get() method requires a key as a first argument
-# as a second optoinal argument, you can pass the value to be returned
+# as a second optional argument, you can pass the value to be returned
 # if the key doesn't exist
 
 # Traceback(most recent call last):
@@ -158,7 +158,7 @@ for grupo in pagode_90:
     print(grupo)
 
 for grupo, hit in pagode_90.items():
-    print(f'Essa arranha:{ grupo} - {hit}')
+    print(f'Essa arranha: {grupo} - {hit}')
 
 # xpto tá vazio
 xpto = {}
@@ -166,3 +166,81 @@ if xpto:
     print("Ok")
 else:
     print("xpto  tá vazio")
+
+for grupo in sorted(pagode_90.keys()):
+    print(grupo)
+
+print(pagode_90)
+
+for cancao in sorted(pagode_90.values()):
+    print(f"Essa canção é braba: {cancao}")
+
+print(pagode_90)
+
+# sobre conjuntos (sets)
+# adicionando chaves distintas com o mesmo valor
+pagode_90['Péricles'] = 'Telegrama'
+pagode_90['Exalta'] = 'Telegrama'
+
+# printando o novo dicionário:
+print(pagode_90)
+
+# resultado:
+# {'Soweto': 'Maçã do Amor', 'Exaltasamba': 'Cartão Postal', 'Raça Negra': 'Jeito Felino',
+#    'SPC': 'Domingo', 'Art Popular': 'Falando Segredo', 'Pericles': 'Telegrama', 'Exalta': 'Telegrama'}
+
+# printando os valores:
+musicas_repetidas = []
+for musica in pagode_90.values():
+    musicas_repetidas.append(musica)
+
+print(musicas_repetidas)
+
+# Resultado (Telegrama aparece 2 vezes):
+# ['Maçã do Amor', 'Cartão Postal', 'Jeito Felino', 'Domingo', 'Falando Segredo', 'Telegrama', 'Telegrama']
+
+# printando apenas valores únicos:
+musicas_unicas = []
+for musica in set(pagode_90.values()):
+    musicas_unicas.append(musica)
+
+print(musicas_unicas)
+
+# Resultado (nova ordem dos itens e duplicidade removida)
+# ['Maçã do Amor', 'Domingo', 'Falando Segredo', 'Cartão Postal', 'Jeito Felino', 'Telegrama']
+
+# inicializando um set (não confundir com dicionários, observar ausência de : e chave-valor)
+# sets não armazenam a ordem em que foram inicializados
+legendary_birds = {'Articuno', 'Zapdos', 'Moltres'}
+legendary_beasts = {'Suicune', 'Entei', 'Raikou'}
+weather_trio = {'Kyogre', 'Groudon', 'Rayquaza'}
+
+print(legendary_birds)
+print(legendary_beasts)
+print(weather_trio)
+
+# Resultado
+# {'Articuno', 'Moltres', 'Zapdos'}
+# {'Suicune', 'Entei', 'Raikou'}
+# {'Groudon', 'Rayquaza', 'Kyogre'}
+
+# testando
+fake_dragon_set = {'Garchomp', 'Dialga', 'Dragonite', 'Garchomp',
+                   'Giratina', 'Palkia', 'Dragonite', 'Salamence',
+                   'Giratina', 'Vyserion', 'Baleryon', 'Valakas',
+                   'Smaug', 'Vyserion', 'Antharas', 'Tiamat',
+                   'Lindvior', 'Haxorus', 'Drogon'}
+
+print(fake_dragon_set)
+# output
+# 1a execução
+# {'Baleryon', 'Giratina', 'Smaug', 'Garchomp', 'Dragonite', 'Palkia', 'Drogon', 'Valakas',
+#    'Haxorus', 'Dialga', 'Vyserion', 'Tiamat', 'Lindvior', 'Salamence', 'Antharas'}
+
+# 2a execução
+# {'Dialga', 'Dragonite', 'Palkia', 'Valakas', 'Giratina', 'Vyserion', 'Tiamat', 'Haxorus',
+#    'Salamence', 'Baleryon', 'Garchomp', 'Smaug', 'Antharas', 'Drogon', 'Lindvior'}
+
+# 3a execução
+# {'Dragonite', 'Lindvior', 'Smaug', 'Dialga', 'Vyserion', 'Garchomp', 'Tiamat', 'Drogon',
+#    'Palkia', 'Haxorus', 'Salamence', 'Antharas', 'Giratina', 'Valakas', 'Baleryon'}
